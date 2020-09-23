@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log In Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="log">
+        <form action="" id="logform">
+            <label for="">User Name:</label>
+            <input type="text" id="uname" placeholder="Must be 8 to 12 characters long">
+            <label for="">Password:</label>
+            <input type="password" id="pass" placeholder="Several types of Characters needed">
+            <input type="submit" value="Log In">
+        </form>
+      <h1></h1>
+    </div>
+    <script src="js/jquery-3.5.1.js"> </script>
+    <script>
+        $(document).ready(function () {
+            $('form#logform').submit(function () {
+                uname = $('input#uname').val();
+              
+                pass = $('input#pass').val();
+              
+                if (uname == '' && pass == '') {
+                    $('h1').text('Inavalid user name or password').css('color', 'red');
+                }
+                else if (uname == '') {
+                    $('h1').text('user name empty').css('color', 'red');
+                }
+                else if (pass=='') {
+                    $('h1').text('password should not be empty').css('color', 'red');
+                }
+                else {
+                    $('h1').text('Successfully Logged In').css('color', 'green');
+                }
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
